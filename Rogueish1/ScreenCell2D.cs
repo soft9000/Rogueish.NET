@@ -5,7 +5,7 @@ namespace Rogueish
     public class ScreenCell2D
     {
         private int xPos, yPos;
-        private static ScreenCell2D maxPoint = new ScreenCell2D(79, 24);
+        private static ScreenCell2D maxPoint = new ScreenCell2D(79, 24); // Updated
 
         public ScreenCell2D()
         {
@@ -54,15 +54,15 @@ namespace Rogueish
         {
             return new ScreenCell2D()
             {
-                XPos = Handy.Misc.GetRandom(0, maxPoint.XPos - 1),
-                YPos = Handy.Misc.GetRandom(0, maxPoint.YPos - 1),
+                XPos = Handy.Misc.GetRandom(0, maxPoint.XPos),
+                YPos = Handy.Misc.GetRandom(0, maxPoint.YPos),
             };
         }
 
         public static bool IsOnScreen(ScreenCell2D playerPoint)
         {
-            if ((playerPoint.YPos > maxPoint.YPos) ||
-                (playerPoint.XPos > maxPoint.XPos) ||
+            if ((playerPoint.YPos >= maxPoint.YPos) ||
+                (playerPoint.XPos >= maxPoint.XPos) ||
                     (playerPoint.YPos < 0) ||
                     (playerPoint.XPos < 0))
             {
