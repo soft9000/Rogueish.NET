@@ -16,6 +16,11 @@
 # Mono auto generated files
 mono_crash.*
 
+# Ye clutterings, goeth ever onward...
+slnx.sqlite
+ProjectSettings.json
+.suo
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
